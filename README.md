@@ -54,8 +54,11 @@ flutter_raspberry_pi_iot\assets\images\sudo snap install core.png
 
 Install new flutter, then check the version.
 ```
-flutter channel stable
-flutter --version
+sudo snap install flutter --classic
+//flutter channel stable
+//flutter --version
+flutter sdk-path
+flutter doctor -v
 ```
 raspberry_pi\assets\images\flutter_--version.png
 
