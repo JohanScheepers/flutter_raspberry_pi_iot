@@ -54,7 +54,7 @@ flutter_raspberry_pi_iot\assets\images\sudo snap install core.png
 
 Install new flutter, then check the version.
 ```
-sudo snap install flutter --classic
+    sudo snap install flutter --classic
 //flutter channel stable
 //flutter --version
 flutter sdk-path
@@ -115,4 +115,8 @@ flutter_raspberry_pi_iot\assets\images\flutter_iot.png
 Or you can use the 'Main Menu Editor' to add a new item 'flutter_raspberry_pi_iot' and with comand '/home/johan/Development/flutter_raspberry_pi_iot'
 
 flutter_raspberry_pi_iot\assets\images\main_menu_editor.png
+
+
+flutter pub add syncfusion_flutter_charts
+flutter pub add syncfusion_flutter_gauges
 

@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
+import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          brightness: Brightness.dark,
+        ),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter IOT'),
@@ -33,48 +38,238 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  double _value = -25.0;
   @override
   Widget build(BuildContext context) {
+    Size appSize = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
         actions: [
-          ElevatedButton(
-              onPressed: () {
-                exit(0);
-              },
-              child: const Text('Exit')),
           PopupMenuButton(
+            color: Colors.deepPurple,
             icon: const Icon(Icons.exit_to_app),
             itemBuilder: (BuildContext context) => <PopupMenuEntry>[
               PopupMenuItem(
+                  child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.red, borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.deepPurple),
                       onPressed: () {
                         exit(0);
                       },
-                      child: const Text('Exit')))
+                      child: const Text(
+                        'Exit App',
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      )),
+                ),
+              ))
             ],
           )
         ],
       ),
       body: Center(
+        child: Container(
+          width: appSize.width,
+          decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.blueAccent,
+                width: 3,
+              ),
+              borderRadius: BorderRadius.circular(15)),
+          child: Row(
+            children: [
+              const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      Gauge1(value: -25.1, title: "Freezer 01"),
+                      Gauge1(value: -22.5, title: "Freezer 02"),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Gauge1(value: -27.7, title: "Freezer 03"),
+                      Gauge1(value: -23.2, title: "Freezer 04"),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: appSize.height / 100 * 80,
+                width: appSize.width / 40 * 9,
+                child: Card.outlined(
+                  //clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shadowColor: Colors.blueAccent,
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: const Padding(
+                            padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Coolor Set Point"),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: appSize.height / 100 * 55,
+                          child: SfSlider.vertical(
+                              min: -35.0,
+                              max: 0.0,
+                              value: _value,
+                              interval: 5,
+                              showTicks: true,
+                              showLabels: true,
+                              enableTooltip: true,
+                              minorTicksPerInterval: 1,
+                              onChanged: (dynamic value) {
+                                setState(() {
+                                  _value = value;
+                                });
+                              }),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(_value.toStringAsFixed(1)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Gauge1 extends StatelessWidget {
+  const Gauge1({super.key, required this.value, required this.title});
+
+  final double value;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    Size appSize = MediaQuery.sizeOf(context);
+    print(appSize.height.toString());
+    print(appSize.width.toString());
+    return SizedBox(
+      height: appSize.height / 100 * 40,
+      width: appSize.width / 40 * 15,
+      child: Card.outlined(
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        shadowColor: Colors.blueAccent,
+        elevation: 5,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              "Start your Flutter IOT project",
-              style: Theme.of(context).textTheme.headlineLarge,
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.black, borderRadius: BorderRadius.circular(5)),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
+                child: Text(title),
+              ),
             ),
-            Text(
-              "Run it on a PI",
-              style: Theme.of(context).textTheme.headlineLarge,
+            SizedBox(
+              height: (appSize.height / 100 * 30) - 40,
+              width: appSize.width / 40 * 15,
+              child: SfRadialGauge(
+                axes: [
+                  RadialAxis(
+                    minimum: -35,
+                    maximum: 0,
+                    axisLabelStyle: const GaugeTextStyle(
+                        color: Color(0xff7ecf28), fontWeight: FontWeight.w500),
+                    showLastLabel: true,
+                    //labelFormat: '{value}$units',
+                    labelOffset: 15,
+                    ranges: [
+                      GaugeRange(
+                        startValue: -35,
+                        endValue: -29,
+                        color: Colors.lightBlue,
+                      ),
+                      GaugeRange(
+                        startValue: -29,
+                        endValue: -18,
+                        color: Colors.blue,
+                      ),
+                      GaugeRange(
+                        startValue: -18,
+                        endValue: -15,
+                        color: Colors.lightBlue,
+                      ),
+                      GaugeRange(
+                        startValue: -15,
+                        endValue: -10,
+                        color: Colors.orange,
+                      ),
+                      GaugeRange(
+                        startValue: -10,
+                        endValue: 0,
+                        color: Colors.red,
+                      )
+                    ],
+                    pointers: [
+                      NeedlePointer(
+                        value: value,
+                        animationDuration: 1000,
+                        enableAnimation: true,
+                        animationType: AnimationType.bounceOut,
+                        needleEndWidth: 5,
+                        needleStartWidth: 1,
+                        needleColor: Colors.white,
+                        knobStyle: const KnobStyle(color: Colors.white),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  exit(0);
-                },
-                child: const Text('Exit'))
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.black, borderRadius: BorderRadius.circular(5)),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
+                child: Text("$value °C"),
+              ),
+            )
           ],
         ),
       ),
