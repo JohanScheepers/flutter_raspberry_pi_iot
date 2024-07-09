@@ -74,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
+          height: 350,
           width: 550,
           decoration: BoxDecoration(
               border: Border.all(
