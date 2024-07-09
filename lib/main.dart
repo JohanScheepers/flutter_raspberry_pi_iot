@@ -57,15 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple),
-                      onPressed: () {
-                        exit(0);
-                      },
-                      child: const Text(
-                        'Exit App',
-                        style: TextStyle(fontWeight: FontWeight.w500),
-                      )),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple),
+                    onPressed: () {
+                      exit(0);
+                    },
+                    child: const Text(
+                      'Exit App',
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                  ),
                 ),
               ))
             ],
@@ -74,8 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          height: 350,
-          width: 550,
+          //height: 350,
+          // width: 550,
           decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.blueAccent,
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
               SizedBox(
-                height: 330,
+                //height: 330,
                 width: 150,
                 child: Card.outlined(
                   //clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -159,6 +160,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Text(_value.toStringAsFixed(1)),
                               ],
                             ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.deepPurple),
+                          onPressed: () {
+                            exit(0);
+                          },
+                          child: const Text(
+                            'Exit App',
+                            style: TextStyle(fontWeight: FontWeight.w500),
                           ),
                         ),
                       ],
