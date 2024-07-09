@@ -140,6 +140,12 @@ Or you can use the 'Main Menu Editor' to add a new item 'flutter_raspberry_pi_io
 ![main_menu_editor.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/main_menu_editor.png)
 
 
+My pi screen size is 1280 x 720
+
+## Build Issue
+
+The two packages require SDK Flutter 3.2.22 & Dart 3.4.3
+
 flutter pub add syncfusion_flutter_charts
 flutter pub add syncfusion_flutter_gauges
 
