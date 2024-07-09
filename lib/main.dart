@@ -125,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("Coolor Set Point"),
+                                Text("Freezer Set Point"),
                               ],
                             ),
                           ),
@@ -182,9 +182,9 @@ class Gauge1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     Size appSize = MediaQuery.sizeOf(context);
-    print(appSize.height.toString());
-    print(appSize.width.toString());
+
     return SizedBox(
       height: appSize.height / 100 * 40,
       width: appSize.width / 40 * 15,
@@ -208,7 +208,7 @@ class Gauge1 extends StatelessWidget {
             ),
             SizedBox(
               height: (appSize.height / 100 * 30) - 40,
-              width: appSize.width / 40 * 15,
+              width: appSize.width / 100 * 80,
               child: SfRadialGauge(
                 axes: [
                   RadialAxis(

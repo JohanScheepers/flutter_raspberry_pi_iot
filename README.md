@@ -79,7 +79,7 @@ To clone this application create directory where we are going to store our appli
 ```
 mkdir Development
 cd Development
-git clone https://github.com/JohanScheepers/flutter_raspberry_pi_iot.git
+sudo git clone https://github.com/JohanScheepers/flutter_raspberry_pi_iot.git
 ```
 
 After the clone are complete check that it were successful
