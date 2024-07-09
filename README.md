@@ -91,6 +91,14 @@ sudo git clone https://github.com/JohanScheepers/flutter_raspberry_pi_iot.git
 ```
 
 After the clone are complete check that it were successful
+
+Sometimes you need to change the permissions of the files
+```
+sudo chmod -R 777 flutter_raspberry_pi_iot
+```
+
+Check that all the ile were downloaded
+
 ```
 cd flutter_raspberry_pi_iot
 ls -l
