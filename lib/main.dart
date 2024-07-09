@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double _value = -25.0;
   @override
   Widget build(BuildContext context) {
+    Size appSize = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -74,115 +75,135 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Center(
-        child: Container(
-          //height: 350,
-          // width: 550,
-          decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.blueAccent,
-                width: 3,
-              ),
-              borderRadius: BorderRadius.circular(15)),
-          child: Row(
-            children: [
-              const Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              //height: 350,
+              // width: 550,
+              decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.blueAccent,
+                    width: 3,
+                  ),
+                  borderRadius: BorderRadius.circular(15)),
+              child: Row(
                 children: [
-                  Row(
+                  const Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Gauge1(value: -25.1, title: "Freezer 01"),
-                      Gauge1(value: -22.5, title: "Freezer 02"),
+                      Row(
+                        children: [
+                          Gauge1(value: -25.1, title: "Freezer 01"),
+                          Gauge1(value: -22.5, title: "Freezer 02"),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Gauge1(value: -27.7, title: "Freezer 03"),
+                          Gauge1(value: -23.2, title: "Freezer 04"),
+                        ],
+                      ),
                     ],
                   ),
-                  Row(
-                    children: [
-                      Gauge1(value: -27.7, title: "Freezer 03"),
-                      Gauge1(value: -23.2, title: "Freezer 04"),
-                    ],
-                  ),
+                  SizedBox(
+                    //height: 330,
+                    width: 150,
+                    child: Card.outlined(
+                      //clipBehavior: Clip.antiAliasWithSaveLayer,
+                      shadowColor: Colors.blueAccent,
+                      elevation: 5,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("Height: ${appSize.height}"),
+                                    Text("Width: ${appSize.width}"),
+                                  ],
+                                ),
+                              ),
+                            ),const SizedBox(height: 10,),
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: const Padding(
+                                padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("Freezer Set Point"),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 225,
+                              child: SfSlider.vertical(
+                                  min: -35.0,
+                                  max: 0.0,
+                                  value: _value,
+                                  interval: 5,
+                                  showTicks: true,
+                                  showLabels: true,
+                                  enableTooltip: true,
+                                  minorTicksPerInterval: 1,
+                                  onChanged: (dynamic value) {
+                                    setState(() {
+                                      _value = value;
+                                    });
+                                  }),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(5)),
+                              child: Padding(
+                                padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(_value.toStringAsFixed(1)),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.deepPurple),
+                              onPressed: () {
+                                exit(0);
+                              },
+                              child: const Text(
+                                'Exit App',
+                                style: TextStyle(fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
-              SizedBox(
-                //height: 330,
-                width: 150,
-                child: Card.outlined(
-                  //clipBehavior: Clip.antiAliasWithSaveLayer,
-                  shadowColor: Colors.blueAccent,
-                  elevation: 5,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: const Padding(
-                            padding: EdgeInsets.fromLTRB(4, 4, 4, 4),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("Freezer Set Point"),
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 225,
-                          child: SfSlider.vertical(
-                              min: -35.0,
-                              max: 0.0,
-                              value: _value,
-                              interval: 5,
-                              showTicks: true,
-                              showLabels: true,
-                              enableTooltip: true,
-                              minorTicksPerInterval: 1,
-                              onChanged: (dynamic value) {
-                                setState(() {
-                                  _value = value;
-                                });
-                              }),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(4, 4, 4, 4),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(_value.toStringAsFixed(1)),
-                              ],
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurple),
-                          onPressed: () {
-                            exit(0);
-                          },
-                          child: const Text(
-                            'Exit App',
-                            style: TextStyle(fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

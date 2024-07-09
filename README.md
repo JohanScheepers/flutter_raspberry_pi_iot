@@ -79,6 +79,11 @@ You will also see 'Flutter IDE Support (No support IDEs installed)', we don't re
 
 ![flutter_doctor.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/flutter_doctor.png)
 
+To upgrade the version o Flutter SDK
+```
+flutter upgrade
+```
+
 
 ### Clone the Application
 
