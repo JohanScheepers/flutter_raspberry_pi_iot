@@ -80,12 +80,19 @@ To clone this application create directory where we are going to store our appli
 mkdir Development
 cd Development
 sudo git clone https://github.com/JohanScheepers/flutter_raspberry_pi_iot.git
+
+sudo git pull https://github.com/JohanScheepers/flutter_raspberry_pi_iot.git
 ```
 
 After the clone are complete check that it were successful
 ```
 cd flutter_raspberry_pi_iot
 ls -l
+```
+
+Sometimes you need to change the permissions of the files
+```
+sudo chmod -R 777 flutter_raspberry_pi_iot
 ```
 
 ### Build the Application
