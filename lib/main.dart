@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          width: 500,
+          width: 550,
           decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.blueAccent,
@@ -101,8 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
               SizedBox(
-                height: 525,
-                width: 100,
+                height: 330,
+                width: 150,
                 child: Card.outlined(
                   //clipBehavior: Clip.antiAliasWithSaveLayer,
                   shadowColor: Colors.blueAccent,
@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         SizedBox(
-                          height: 400,
+                          height: 225,
                           child: SfSlider.vertical(
                               min: -35.0,
                               max: 0.0,
@@ -182,7 +182,7 @@ class Gauge1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 260,
+      height: 170,
       width: 190,
       child: Card.outlined(
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -203,7 +203,7 @@ class Gauge1 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 200,
+              height: 110,
               width: 200,
               child: SfRadialGauge(
                 axes: [

@@ -104,10 +104,6 @@ cd flutter_raspberry_pi_iot
 ls -l
 ```
 
-Sometimes you need to change the permissions of the files
-```
-sudo chmod -R 777 flutter_raspberry_pi_iot
-```
 
 ### Build the Application
 
