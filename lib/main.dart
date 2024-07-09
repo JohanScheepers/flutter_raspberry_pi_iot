@@ -41,7 +41,6 @@ class _MyHomePageState extends State<MyHomePage> {
   double _value = -25.0;
   @override
   Widget build(BuildContext context) {
-    Size appSize = MediaQuery.sizeOf(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -75,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Container(
-          width: appSize.width,
+          width: 500,
           decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.blueAccent,
@@ -102,8 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
               SizedBox(
-                height: appSize.height / 100 * 80,
-                width: appSize.width / 40 * 9,
+                height: 525,
+                width: 100,
                 child: Card.outlined(
                   //clipBehavior: Clip.antiAliasWithSaveLayer,
                   shadowColor: Colors.blueAccent,
@@ -131,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                         SizedBox(
-                          height: appSize.height / 100 * 55,
+                          height: 400,
                           child: SfSlider.vertical(
                               min: -35.0,
                               max: 0.0,
@@ -182,12 +181,9 @@ class Gauge1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    Size appSize = MediaQuery.sizeOf(context);
-
     return SizedBox(
-      height: appSize.height / 100 * 40,
-      width: appSize.width / 40 * 15,
+      height: 260,
+      width: 190,
       child: Card.outlined(
         clipBehavior: Clip.antiAliasWithSaveLayer,
         shadowColor: Colors.blueAccent,
@@ -207,8 +203,8 @@ class Gauge1 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: (appSize.height / 100 * 30) - 40,
-              width: appSize.width / 100 * 80,
+              height: 200,
+              width: 200,
               child: SfRadialGauge(
                 axes: [
                   RadialAxis(

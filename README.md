@@ -26,7 +26,8 @@ Now you will be able to log in via SSH
 
 To install al the software applications I will SSH in to the PI using its IP address (please verify you IP and it will most probably not be the same) from the command prompt of my laptop
 
-flutter_raspberry_pi_iot\assets\images\ssh.png
+![ssh.PNG](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/ssh.PNG)
+
 
 Next we need to check if git were installed on the Raspberry PI. From the terminal we run
 ```
@@ -49,18 +50,23 @@ Install snapd and snap core.
 sudo apt install snapd
 sudo snap install core
 ```
-flutter_raspberry_pi_iot\assets\images\sudo apt install snapd.png
-flutter_raspberry_pi_iot\assets\images\sudo snap install core.png
+![sudo_apt_install_snapd.PNG](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/sudo_apt_install_snapd.PNG)
+
+![sudo_snap_install_core.PNG](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/sudo_snap_install_core.PNG)
+
+
 
 Install new flutter, then check the version.
 ```
     sudo snap install flutter --classic
-//flutter channel stable
-//flutter --version
+flutter channel stable
+/flutter --version
 flutter sdk-path
 flutter doctor -v
 ```
-raspberry_pi\assets\images\flutter_--version.png
+
+![flutter_--version.PNG](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/flutter_--version.PNG)
+
 
 Now you can run the doctor to ensure you have no errors in flutter
 ```
@@ -71,7 +77,8 @@ If you see the Chrome error it is most likely that you have not installed Chrome
 
 You will also see 'Flutter IDE Support (No support IDEs installed)', we don't require this as we will not develop our applications on the Raspberry PI.
 
-flutter_raspberry_pi_iot\assets\images\flutter_doctor.png
+![flutter_doctor.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/flutter_doctor.png)
+
 
 ### Clone the Application
 
@@ -81,7 +88,6 @@ mkdir Development
 cd Development
 sudo git clone https://github.com/JohanScheepers/flutter_raspberry_pi_iot.git
 
-sudo git pull https://github.com/JohanScheepers/flutter_raspberry_pi_iot.git
 ```
 
 After the clone are complete check that it were successful
@@ -117,11 +123,12 @@ Use VNC to log into your Raspberry PI, use the "File Manager" to navigat to the 
 
 Double click on the 'flutter_raspberry_pi_iot' file and select 'Execute'.
 
-flutter_raspberry_pi_iot\assets\images\flutter_iot.png
+![flutter_iot.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/flutter_iot.png)
+
 
 Or you can use the 'Main Menu Editor' to add a new item 'flutter_raspberry_pi_iot' and with comand '/home/johan/Development/flutter_raspberry_pi_iot'
 
-flutter_raspberry_pi_iot\assets\images\main_menu_editor.png
+![main_menu_editor.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/main_menu_editor.png)
 
 
 flutter pub add syncfusion_flutter_charts
