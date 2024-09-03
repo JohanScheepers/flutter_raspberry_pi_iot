@@ -149,3 +149,22 @@ The two packages require SDK Flutter 3.2.22 & Dart 3.4.3
 flutter pub add syncfusion_flutter_charts
 flutter pub add syncfusion_flutter_gauges
 
+
+
+type $env:C:\Users\Johan/.ssh/id_rsa | ssh johan@10.0.0.15 "cat >> .ssh/authorized_keys"
+
+type $env:C:\Users\Johan\.ssh\id_rsa.pub | ssh johan@NodeRed "cat >> .ssh/authorized_keys"
+
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh johan@NodeRed "cat >> .ssh/authorized_keys"
+
+
+
+flutter build bundle
+
+
+scp -r ./build/flutter_assets/ johan@10.0.0.12:/home/johan/Development/my_apps_flutter_assets
+
+
+
+SSH into pi
+flutter-pi --release /home/johan/Development/my_apps_flutter_assets
