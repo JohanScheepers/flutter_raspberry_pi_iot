@@ -35,6 +35,19 @@ class AppRun extends StatelessWidget {
               ),
               Text("width: ${appSize.width}"),
               Text("height: ${appSize.height}"),
+              const SizedBox(height: 10),
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                    color: Colors.blueAccent.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(20)),
+                child: const Image(
+                  image: AssetImage('assets/images/dash.png'),
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+              const SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepPurple),

@@ -58,9 +58,9 @@ sudo snap install core
 
 Install new flutter, then check the version.
 ```
-    sudo snap install flutter --classic
+sudo snap install flutter --classic
 flutter channel stable
-/flutter --version
+flutter --version
 flutter sdk-path
 flutter doctor -v
 ```
@@ -102,7 +102,7 @@ Sometimes you need to change the permissions of the files
 sudo chmod -R 777 flutter_raspberry_pi_iot
 ```
 
-Check that all the ile were downloaded
+Check that all the file were downloaded
 
 ```
 cd flutter_raspberry_pi_iot
@@ -140,15 +140,10 @@ Or you can use the 'Main Menu Editor' to add a new item 'flutter_raspberry_pi_io
 ![main_menu_editor.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/main_menu_editor.png)
 
 
-My pi screen size is 1280 x 720
 
 ## Build Issue
 
 The two packages require SDK Flutter 3.2.22 & Dart 3.4.3
-
-flutter pub add syncfusion_flutter_charts
-flutter pub add syncfusion_flutter_gauges
-
 
 
 type $env:C:\Users\Johan/.ssh/id_rsa | ssh johan@10.0.0.15 "cat >> .ssh/authorized_keys"
