@@ -132,7 +132,7 @@ Use VNC to log into your Raspberry PI, use the "File Manager" to navigat to the 
 
 Double click on the 'flutter_raspberry_pi_iot' file and select 'Execute'.
 
-![flutter_iot.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/flutter_iot.png)
+![flutter_iot.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/PI_IOT.gif)
 
 
 Or you can use the 'Main Menu Editor' to add a new item 'flutter_raspberry_pi_iot' and with comand '/home/johan/Development/flutter_raspberry_pi_iot'
@@ -163,3 +163,10 @@ scp -r ./build/flutter_assets/ johan@10.0.0.12:/home/johan/Development/my_apps_f
 
 SSH into pi
 flutter-pi --release /home/johan/Development/my_apps_flutter_assets
+
+# Copy Files
+
+To copy any files from you pc to the pi you can 
+
+
+    scp -r * johan@10.0.0.12:~/Documents/flutter_raspberry_pi_iot
