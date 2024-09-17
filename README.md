@@ -126,13 +126,20 @@ Your application will now be in
 
 flutter_raspberry_pi_iot\assets\images\flutter_raspberr_pi_bundle.png
 
+### Wiring the PI
+
+You can follow the detailed wiring diagram to connect the Raspberry Pi to the led and switch. Proper wiring is essential, and the diagram below provides a clear guide for this setup.
+
+![pi_wiring.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/pi/pi_wiring.png)
+
+
 ### Run Application
 
 Use VNC to log into your Raspberry PI, use the "File Manager" to navigat to the folder whare the application were build.
 
 Double click on the 'flutter_raspberry_pi_iot' file and select 'Execute'.
 
-![flutter_iot.png](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/PI_IOT.gif)
+![flutte_and_dart_pi.mp4](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/flutte_and_dart_pi.mp4)
 
 
 Or you can use the 'Main Menu Editor' to add a new item 'flutter_raspberry_pi_iot' and with comand '/home/johan/Development/flutter_raspberry_pi_iot'
@@ -166,7 +173,7 @@ flutter-pi --release /home/johan/Development/my_apps_flutter_assets
 
 # Copy Files
 
-To copy any files from you pc to the pi you can 
+To copy any files from you pc to the pi you can use
 
 
     scp -r * johan@10.0.0.12:~/Documents/flutter_raspberry_pi_iot

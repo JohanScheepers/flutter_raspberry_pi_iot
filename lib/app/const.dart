@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+const TextStyle styleText =
+    TextStyle(color: Colors.black, fontWeight: FontWeight.w900);
+
 const List<Widget> leds = <Widget>[
   Text('Red Led'),
   Text('Green Led'),
