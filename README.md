@@ -139,7 +139,7 @@ Use VNC to log into your Raspberry PI, use the "File Manager" to navigat to the 
 
 Double click on the 'flutter_raspberry_pi_iot' file and select 'Execute'.
 
-![flutte_and_dart_pi.mp4](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/flutte_and_dart_pi.mp4)
+![flutte_and_dart_pi.mp4](https://github.com/JohanScheepers/flutter_raspberry_pi_iot/blob/main/assets/images/pi/flutte_and_dart_pi.mp4)
 
 
 Or you can use the 'Main Menu Editor' to add a new item 'flutter_raspberry_pi_iot' and with comand '/home/johan/Development/flutter_raspberry_pi_iot'
